@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Încărcare">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>Încărcare mașină</title>
+<style>
+:root{--tx:#14171c;--mut:#5f6671;--gb:rgba(255,255,255,.62);--ge:rgba(255,255,255,.14);--bd:rgba(255,255,255,.7);--in:rgba(255,255,255,.38);--ins:rgba(30,40,60,.10);--sh:0 14px 40px rgba(40,50,75,.16);--hi:rgba(255,255,255,.95);
+--bgA:#f7f8fa;--bgB:#d5d9e1;--bgC:#b9c0cc;--blob1:#ffffff;--blob2:#aab3c2;--navbg:rgba(255,255,255,.5)}
+@media(prefers-color-scheme:dark){:root{--tx:#f3f5f8;--mut:#a6adb8;--gb:rgba(255,255,255,.16);--ge:rgba(255,255,255,.04);--bd:rgba(255,255,255,.22);--in:rgba(255,255,255,.07);--ins:rgba(0,0,0,.35);--sh:0 14px 40px rgba(0,0,0,.5);--hi:rgba(255,255,255,.35);
+--bgA:#3a3e46;--bgB:#1b1d22;--bgC:#101215;--blob1:#8d96a6;--blob2:#5d6676;--navbg:rgba(40,43,50,.55)}}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{min-height:100%;background:radial-gradient(120% 70% at 10% 0%,var(--bgA),transparent 60%),radial-gradient(100% 60% at 100% 100%,var(--bgC),transparent 65%),linear-gradient(170deg,var(--bgB),var(--bgC)) fixed}
+body{margin:0;font-family:-apple-system,"SF Pro Display",system-ui,sans-serif;color:var(--tx);padding:0 12px calc(130px + env(safe-area-inset-bottom));position:relative;overflow-x:hidden}
+body::before,body::after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(60px)}
+body::before{width:300px;height:300px;background:var(--blob1);top:8%;left:-110px;opacity:.85;animation:fl1 18s ease-in-out infinite alternate}
+body::after{width:340px;height:340px;background:var(--blob2);bottom:4%;right:-140px;opacity:.55;animation:fl2 22s ease-in-out infinite alternate}
+@keyframes fl1{to{transform:translate(70px,260px) scale(1.15)}}
+@keyframes fl2{to{transform:translate(-90px,-300px) scale(.9)}}
+.big{font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-1px}
+
+/* antet care se micșorează */
+#hd{position:sticky;top:0;z-index:20;margin:0 -12px 8px;padding:calc(env(safe-area-inset-top) + 10px) 18px 10px;transition:background .3s,box-shadow .3s,padding .3s}
+#hd.sm{background:var(--navbg);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);box-shadow:0 1px 0 var(--bd),0 8px 24px rgba(40,50,75,.08);padding-top:calc(env(safe-area-inset-top) + 4px);padding-bottom:6px}
+#hd .k{font-size:12px;color:var(--mut);font-weight:700;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;max-height:20px;overflow:hidden}
+#hd.sm .k{max-height:0;opacity:0}
+#ttl{margin:0;font-size:36px;transition:font-size .3s;background:linear-gradient(180deg,var(--tx),var(--mut));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+#hd.sm #ttl{font-size:20px}
+
+h2{font-size:16px;margin:0 0 10px;letter-spacing:-.2px}
+.tab{display:none}.tab.on{display:block}
+.card,.month{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--gb),var(--ge));backdrop-filter:blur(32px) saturate(200%) brightness(1.06);-webkit-backdrop-filter:blur(32px) saturate(200%) brightness(1.06);border:1px solid var(--bd);border-radius:28px;padding:16px;margin-bottom:14px;box-shadow:var(--sh),inset 0 1.5px 0 var(--hi),inset 0 -1px 0 rgba(255,255,255,.18),inset 0 0 26px rgba(255,255,255,.10)}
+.card::before,.month::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(120% 60% at var(--sx,0%) var(--sy,0%),rgba(255,255,255,.55),transparent 55%),linear-gradient(180deg,rgba(255,255,255,.18),transparent 30%)}
+.card>*,.month>*{position:relative}
+@keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+
+label{display:block;font-size:12px;color:var(--mut);margin:10px 0 4px 4px;font-weight:600}
+input,select{width:100%;padding:11px 14px;border-radius:18px;border:1px solid var(--bd);background:var(--in);color:var(--tx);font-size:16px;height:50px;min-width:0;max-width:100%;-webkit-appearance:none;appearance:none;text-align:left;display:block;box-shadow:inset 0 2px 6px var(--ins),inset 0 1px 0 rgba(255,255,255,.3)}
+textarea{width:100%;height:120px;padding:12px 14px;border-radius:18px;border:1px solid var(--bd);background:var(--in);color:var(--tx);font-size:14px;font-family:ui-monospace,Menlo,monospace;box-shadow:inset 0 2px 6px var(--ins);resize:none;display:block}
+input::placeholder{color:var(--mut);opacity:.7}
+.row{display:flex;gap:8px}.row>*{flex:1 1 0;min-width:0;width:50%}
+input[type=date]{line-height:26px;padding-right:8px}
+input[type=date]::-webkit-date-and-time-value{text-align:left;min-width:0}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--mut) 50%),linear-gradient(135deg,var(--mut) 50%,transparent 50%);background-position:calc(100% - 22px) 22px,calc(100% - 17px) 22px;background-size:5px 5px;background-repeat:no-repeat;padding-right:34px}
+button{position:relative;overflow:hidden;padding:13px;border:1px solid rgba(255,255,255,.4);border-radius:22px;background:linear-gradient(180deg,rgba(95,102,115,.95),rgba(42,46,54,.95));color:#fff;font-size:15px;font-weight:700;width:100%;margin-top:12px;box-shadow:0 8px 20px rgba(25,30,40,.3),inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -2px 6px rgba(0,0,0,.25);transition:transform .15s ease}
+button::after{content:"";position:absolute;left:8%;right:8%;top:2px;height:45%;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent);pointer-events:none}
+button:active{transform:scale(.96)}
+button.sec{background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.2));color:var(--tx);border:1px solid var(--bd);box-shadow:0 4px 14px rgba(40,50,75,.1),inset 0 1.5px 0 var(--hi)}
+@media(prefers-color-scheme:dark){button.sec{background:linear-gradient(180deg,rgba(255,255,255,.2),rgba(255,255,255,.06))}}
+button.sm{width:auto;padding:5px 11px;font-size:12px;margin:0 0 0 3px;border-radius:12px}
+button.sm::after{display:none}
+a{color:var(--tx)}
+iframe{width:100%;height:290px;border:1px solid var(--bd);border-radius:22px;margin-top:12px;background:var(--in);box-shadow:inset 0 2px 8px var(--ins)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:6px 3px;text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600;font-size:11px}
+td.n,th.n{text-align:right;white-space:nowrap}
+.sub{font-size:12px;color:var(--mut)}
+.tot{border-top:1px solid rgba(128,128,128,.28);font-weight:700}
+.wk{font-size:11px;font-weight:700;opacity:.6;padding-top:8px!important}
+
+/* luni pliabile */
+.mh{display:flex;justify-content:space-between;align-items:center;cursor:pointer}
+.mh h3{margin:0;font-size:17px;text-transform:capitalize}
+.mh .r{display:flex;gap:8px;align-items:center;font-size:17px}
+.chev{display:inline-block;transition:transform .35s;font-size:13px;opacity:.7}
+.month.open .chev{transform:rotate(180deg)}
+.mb{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1)}
+.month.open .mb{grid-template-rows:1fr;margin-top:8px}
+.mi{overflow:hidden;min-height:0}
+tr.out>td{opacity:0;transition:opacity .25s}
+tr.pop>td{animation:pop .9s ease-out}
+@keyframes pop{0%{opacity:0;background:rgba(255,255,255,.8)}40%{opacity:1;background:rgba(255,255,255,.5)}100%{background:transparent}}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:linear-gradient(135deg,var(--in),transparent);border:1px solid var(--bd);border-radius:20px;padding:12px;box-shadow:inset 0 1.5px 0 var(--hi),0 4px 12px rgba(40,50,75,.07)}
+.stat b{display:block;font-size:20px;margin-top:3px;font-family:ui-rounded,"SF Pro Rounded",-apple-system,system-ui,sans-serif;font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:-.5px}
+svg text{fill:var(--tx);font-family:inherit}
+svg .bar{filter:drop-shadow(0 2px 3px rgba(40,50,75,.25));transform-box:fill-box;transform-origin:bottom;animation:grow .9s cubic-bezier(.2,.9,.3,1) both}
+@keyframes grow{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+
+/* inel buget */
+.ringbox{display:flex;align-items:center;gap:16px;cursor:pointer}
+.ringbox svg{flex:none}
+.rt{flex:1}
+.rt .v{font-size:34px;line-height:1}
+.li{display:flex;justify-content:space-between;align-items:center;padding:11px 2px;border-top:1px solid rgba(128,128,128,.2);cursor:pointer}
+.li:first-of-type{border-top:0}
+.li .a{font-weight:700}
+.li .b{text-align:right;font-size:18px}
+
+/* navigare plutitoare */
+#nav{position:fixed;z-index:30;left:50%;transform:translateX(-50%);bottom:calc(14px + env(safe-area-inset-bottom));width:min(360px,calc(100% - 28px));display:flex;padding:6px;border-radius:34px;background:var(--navbg);backdrop-filter:blur(30px) saturate(200%);-webkit-backdrop-filter:blur(30px) saturate(200%);border:1px solid var(--bd);box-shadow:0 16px 40px rgba(30,40,60,.25),inset 0 1.5px 0 var(--hi)}
+#ind{position:absolute;top:6px;bottom:6px;left:6px;width:calc((100% - 12px)/4);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.3));box-shadow:0 4px 12px rgba(40,50,75,.15),inset 0 1.5px 0 #fff;transition:transform .45s cubic-bezier(.3,1.3,.4,1)}
+@media(prefers-color-scheme:dark){#ind{background:linear-gradient(180deg,rgba(255,255,255,.28),rgba(255,255,255,.08));box-shadow:0 4px 12px rgba(0,0,0,.3),inset 0 1.5px 0 rgba(255,255,255,.4)}}
+.ni{position:relative;flex:1;text-align:center;padding:8px 0 6px;font-size:10px;font-weight:700;color:var(--mut);cursor:pointer;transition:color .3s}
+.ni.on{color:var(--tx)}
+.ni svg{display:block;margin:0 auto 2px;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* buton + și panou de jos */
+#fab{position:fixed;z-index:31;right:20px;bottom:calc(92px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(95,102,115,.97),rgba(35,39,46,.97));border:1px solid rgba(255,255,255,.45);box-shadow:0 12px 28px rgba(25,30,40,.4),inset 0 1.5px 0 rgba(255,255,255,.5);color:#fff;cursor:pointer;transition:transform .35s cubic-bezier(.3,1.4,.4,1),opacity .25s}
+#fab:active{transform:scale(.9)}
+#fab svg{width:28px;height:28px;stroke:#fff;stroke-width:2.6;stroke-linecap:round;fill:none}
+body.so #fab{transform:scale(0) rotate(90deg);opacity:0;pointer-events:none}
+#bd{position:fixed;inset:0;z-index:40;background:rgba(10,14,22,.35);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s}
+body.so #bd{opacity:1;pointer-events:auto}
+#sheet{position:fixed;z-index:50;left:0;right:0;bottom:0;max-height:92vh;overflow-y:auto;padding:0 16px calc(24px + env(safe-area-inset-bottom));border-radius:32px 32px 0 0;background:linear-gradient(180deg,var(--gb),var(--ge)),var(--navbg);background-color:var(--navbg);backdrop-filter:blur(40px) saturate(200%);-webkit-backdrop-filter:blur(40px) saturate(200%);border:1px solid var(--bd);border-bottom:0;box-shadow:0 -20px 50px rgba(20,30,50,.3),inset 0 1.5px 0 var(--hi);transform:translateY(105%);transition:transform .5s cubic-bezier(.2,.9,.25,1)}
+@media(prefers-color-scheme:light){#sheet{background-color:rgba(245,246,249,.78)}}
+body.so #sheet{transform:none}
+#grab{padding:12px 0 8px;touch-action:none}
+#grab::after{content:"";display:block;width:44px;height:5px;border-radius:3px;background:var(--mut);opacity:.5;margin:0 auto}
+#st{position:fixed;z-index:25;left:16px;bottom:calc(98px + env(safe-area-inset-bottom));font-size:11px;color:var(--mut);padding:3px 9px;border-radius:10px;background:var(--in);border:1px solid var(--bd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#st:empty{display:none}
+</style>
+</head>
+<body>
+
+<header id="hd"><div class="k">⚡ Încărcare mașină</div><h1 id="ttl" class="big">Acasă</h1></header>
+
+<div id="dbn" class="card" hidden><h2>Conectează baza de date</h2><p class="sub" style="margin:0 0 8px">Datele sunt acum doar în acest telefon. Lipește aici blocul <b>firebaseConfig</b> din Firebase (pasul 4 din instrucțiuni).</p><textarea id="fbt" placeholder='const firebaseConfig = { apiKey: "...", projectId: "..." };'></textarea><button id="fbb">Conectează</button></div>
+
+<!-- ACASĂ -->
+<section class="tab on" id="t-home">
+<div class="card ringbox" onclick="setBudget()">
+<svg width="132" height="132" viewBox="0 0 132 132">
+<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c3c9d4"/><stop offset="1" stop-color="#4b525e"/></linearGradient>
+<linearGradient id="rr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3a6a8"/><stop offset="1" stop-color="#d9363e"/></linearGradient></defs>
+<circle cx="66" cy="66" r="54" fill="none" stroke="rgba(128,134,146,.25)" stroke-width="14"/>
+<circle id="ring" cx="66" cy="66" r="54" fill="none" stroke="url(#rg)" stroke-width="14" stroke-linecap="round" transform="rotate(-90 66 66)" style="stroke-dasharray:339.3;stroke-dashoffset:339.3;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)"/>
+<text id="rpct" x="66" y="74" text-anchor="middle" font-size="24" font-weight="800" class="big">0%</text>
+</svg>
+<div class="rt"><div class="sub">Luna aceasta</div><div class="v big" id="hSpent">0 lei</div><div class="sub" id="hBud"></div></div>
+</div>
+<div class="grid" id="hStats" style="margin-bottom:14px"></div>
+<div class="card"><h2>Ultimele încărcări</h2><div id="recent"></div></div>
+</section>
+
+<!-- ISTORIC -->
+<section class="tab" id="t-hist"><div id="out"></div></section>
+
+<!-- STATISTICI -->
+<section class="tab" id="t-stats">
+<div class="card"><h2>Statistici</h2><div id="stats" class="grid"></div><div id="perst" class="sub" style="margin-top:12px"></div></div>
+<div class="card"><h2>Cheltuieli pe lună (lei)</h2><div id="c1"></div><h2 style="margin-top:16px">Energie pe lună (kWh)</h2><div id="c2"></div></div>
+</section>
+
+<!-- HARTĂ -->
+<section class="tab" id="t-map">
+<div class="card">
+<h2>Harta stațiilor</h2>
+<div class="row">
+<button class="sec" onclick="map('Eldrive')">Eldrive</button>
+<button class="sec" onclick="map('PlugPoint')">PlugPoint</button>
+<button class="sec" onclick="map('stație încărcare electrică')">Toate</button>
+</div>
+<iframe id="m" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+<a id="ol" class="sub" target="_blank">Deschide în aplicația Google Maps ↗</a>
+<p class="sub">Apasă o stație pe hartă și vezi numele/adresa ei. Apoi apeși „Adaugă stația” și o alegi la încărcare.</p>
+<label>Numele stației (cum apare pe hartă)</label>
+<input id="sn" placeholder="ex: Eldrive - Kaufland Pipera">
+<div class="row">
+<div><label>Rețea</label><select id="sb"><option>Eldrive</option><option>PlugPoint</option><option>Altă</option></select></div>
+<div><label>Link Google Maps (opțional)</label><input id="sl" placeholder="lipește linkul"></div>
+</div>
+<button class="sec" id="adds">Adaugă stația</button>
+<div id="sl-list" class="sub" style="margin-top:10px"></div>
+</div>
+</section>
+
+<div id="st"></div>
+
+<!-- navigare -->
+<nav id="nav">
+<div id="ind"></div>
+<div class="ni on" data-t="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Acasă</div>
+<div class="ni" data-t="hist"><svg viewBox="0 0 24 24"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Istoric</div>
+<div class="ni" data-t="stats"><svg viewBox="0 0 24 24"><path d="M3 3v18h18M7 16v-5M12 16V7M17 16v-3"/></svg>Statistici</div>
+<div class="ni" data-t="map"><svg viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Hartă</div>
+</nav>
+
+<div id="fab" onclick="openSheet()"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></div>
+
+<!-- panou de jos -->
+<div id="bd" onclick="closeSheet()"></div>
+<div id="sheet">
+<div id="grab"></div>
+<h2 id="ft" class="big" style="font-size:22px">Încărcare nouă</h2>
+<button class="sec" id="plin" style="margin-top:4px">⚡ Mod Plin: completează data și stația preferată</button>
+<div class="row">
+<div><label>Data</label><input type="date" id="d"></div>
+<div><label>kWh</label><input type="number" id="k" step="0.01" inputmode="decimal"></div>
+</div>
+<div class="row">
+<div><label>Preț total (lei)</label><input type="number" id="p" step="0.01" inputmode="decimal"></div>
+<div><label>Stația</label><select id="s"></select></div>
+</div>
+<div class="sub" id="hint" style="margin:6px 4px 0"></div>
+<label>Kilometraj mașină (opțional)</label>
+<input type="number" id="o" inputmode="numeric" placeholder="ex: 24850">
+<button id="add">Salvează încărcarea</button>
+<button class="sec" id="newst" style="margin-top:8px">+ Stație nouă (din hartă)</button>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+// === Configurarea Firebase: lipește aici blocul tău ===
+const FB_FILE = null; // opțional: poți lipi blocul și aici, ex: {apiKey:"...",projectId:"...",appId:"..."}
+let FB = FB_FILE;
+if(!FB){try{FB = JSON.parse(localStorage.getItem("fbcfg") || "null");}catch(e){}}
+const DOC = "masina";
+let db = null, editIdx = null, popI = null, pAuto = true, mapLoaded = false, openM = new Set(), openInit = false, curTab = "home";
+let S = {charges: [], stations: [{n:"Eldrive", b:"Eldrive"}, {n:"PlugPoint", b:"PlugPoint"}], budget: 0};
+const $ = id => document.getElementById(id);
+const f2 = x => (Math.round(x*100)/100).toFixed(2);
+const f1 = x => (Math.round(x*10)/10).toFixed(1);
+const TITLES = {home:"Acasă", hist:"Istoric", stats:"Statistici", map:"Hartă"};
+
+/* ---------- date + sincronizare ---------- */
+function load(){try{const r = localStorage.getItem(DOC); if(r){const x = JSON.parse(r); S = {charges:x.charges||[], stations:x.stations||S.stations, budget:x.budget||0};}}catch(e){}}
+function local(){try{localStorage.setItem(DOC, JSON.stringify(S));}catch(e){}}
+function save(){
+  local();
+  if(db) db.collection("app").doc(DOC).set(S).then(()=>$("st").textContent="sincronizat ✓").catch(()=>$("st").textContent="offline – se salvează în telefon");
+}
+function init(){
+  load();
+  $("dbn").hidden = !!FB;
+  if(FB && window.firebase){
+    try{
+      firebase.initializeApp(FB); db = firebase.firestore();
+      db.collection("app").doc(DOC).onSnapshot(s=>{
+        if(s.exists){const x = s.data(); S = {charges: x.charges||[], stations: x.stations||S.stations, budget: x.budget||0}; local(); render();}
+        else save();
+        $("st").textContent = "sincronizat ✓";
+      }, ()=>$("st").textContent = "offline – se salvează în telefon");
+    }catch(e){$("st").textContent = "eroare Firebase";}
+  }
+  $("d").valueAsDate = new Date();
+  render(); go("home", true);
+}
+
+/* ---------- haptic ---------- */
+function tap(){
+  try{
+    if(navigator.vibrate) navigator.vibrate(14);
+    const l = document.createElement("label");
+    l.style.cssText = "position:fixed;opacity:0;pointer-events:none;left:-99px";
+    l.innerHTML = '<input type="checkbox" switch>';
+    document.body.appendChild(l); l.click(); setTimeout(()=>l.remove(), 120);
+  }catch(e){}
+}
+
+/* ---------- animații ---------- */
+function cascade(sec){
+  [...sec.querySelectorAll(":scope > .card, :scope > .month, :scope > .grid, :scope > #out > .month, :scope > #out > .card")].forEach((el,i)=>{
+    el.style.animation = "none"; void el.offsetWidth;
+    el.style.animation = `rise .6s cubic-bezier(.2,.8,.2,1) ${i*80}ms both`;
+  });
+}
+function countUp(root){
+  (root||document).querySelectorAll("[data-n]").forEach(el=>{
+    const n = +el.dataset.n, d = +el.dataset.d || 0, u = el.dataset.u || "", t0 = performance.now();
+    (function f(t){const p = Math.min(1, (t-t0)/900), e = 1-Math.pow(1-p,3); el.textContent = (n*e).toFixed(d)+u; if(p<1) requestAnimationFrame(f);})(t0);
+  });
+}
+function go(t, first){
+  if(!first && t === curTab) return;
+  curTab = t; tap();
+  document.querySelectorAll(".tab").forEach(s=>s.classList.toggle("on", s.id === "t-"+t));
+  const names = Object.keys(TITLES);
+  document.querySelectorAll(".ni").forEach((n,i)=>n.classList.toggle("on", n.dataset.t === t));
+  $("ind").style.transform = `translateX(${names.indexOf(t)*100}%)`;
+  $("ttl").textContent = TITLES[t];
+  window.scrollTo({top:0});
+  const sec = $("t-"+t); cascade(sec); countUp(sec);
+  if(t === "home") animRing();
+  if(t === "map" && !mapLoaded){mapLoaded = true; map("Eldrive");}
+}
+document.querySelectorAll(".ni").forEach(n=>n.onclick = ()=>go(n.dataset.t));
+window.addEventListener("scroll", ()=>$("hd").classList.toggle("sm", window.scrollY > 24), {passive:true});
+
+/* reflexie care urmărește mișcarea */
+let gy = false, raf = 0;
+function sheen(x, y){if(raf) return; raf = requestAnimationFrame(()=>{raf = 0; document.documentElement.style.setProperty("--sx", x+"%"); document.documentElement.style.setProperty("--sy", y+"%");});}
+function onOri(e){
+  if(e.gamma == null) return; gy = true;
+  const x = Math.max(0, Math.min(100, 50 + e.gamma*1.6)), y = Math.max(-10, Math.min(90, 20 + (e.beta-50)*1.4));
+  sheen(x.toFixed(1), y.toFixed(1));
+}
+window.addEventListener("pointermove", e=>{if(!gy) sheen((e.clientX/innerWidth*100).toFixed(1), (e.clientY/innerHeight*100).toFixed(1));}, {passive:true});
+let oriAsked = false;
+document.addEventListener("pointerdown", ()=>{
+  if(oriAsked) return; oriAsked = true;
+  try{
+    if(window.DeviceOrientationEvent && typeof DeviceOrientationEvent.requestPermission === "function"){
+      DeviceOrientationEvent.requestPermission().then(r=>{if(r === "granted") window.addEventListener("deviceorientation", onOri);}).catch(()=>{});
+    } else window.addEventListener("deviceorientation", onOri);
+  }catch(e){}
+}, {once:false});
+
+/* ---------- hartă ---------- */
+function map(q){
+  const base = "https://www.google.com/maps?output=embed&z=12&q=" + encodeURIComponent(q);
+  $("ol").href = "https://www.google.com/maps/search/" + encodeURIComponent(q);
+  if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(
+      p=>$("m").src = base + "&ll=" + p.coords.latitude + "," + p.coords.longitude,
+      ()=>$("m").src = base, {timeout:4000});
+  } else $("m").src = base;
+}
+
+/* ---------- calcule ---------- */
+function byDate(){return S.charges.map((c,i)=>({...c,i})).sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:a.i-b.i);}
+function calc(){
+  const res = {}; let prevO = null, accK = 0, accP = 0;
+  byDate().forEach(c=>{
+    accK += c.k; accP += c.p;
+    if(c.o > 0){
+      if(prevO !== null && c.o > prevO){const km = c.o - prevO; res[c.i] = {km, aK: accK, aP: accP, cons: accK/km*100, cpk: accP/km};}
+      prevO = c.o; accK = 0; accP = 0;
+    }
+  });
+  return res;
+}
+function lastInfo(){const a = byDate(); const l = a[a.length-1]; return l ? {s:l.s, ppk:l.p/l.k} : null;}
+function favStation(){const c = {}; S.charges.forEach(x=>c[x.s]=(c[x.s]||0)+1); return Object.keys(c).sort((a,b)=>c[b]-c[a])[0];}
+function monthKey(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");}
+
+function bars(id, labels, vals, dec){
+  if(!vals.length){$(id).innerHTML = '<p class="sub">Nicio dată încă.</p>'; return;}
+  const W = 320, H = 150, n = vals.length, mx = Math.max(...vals) || 1, bw = Math.min(34, (W-20)/n - 6);
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="bg${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3c9d4"/><stop offset="1" stop-color="#6f7886"/></linearGradient></defs>`;
+  vals.forEach((v,i)=>{
+    const h = Math.max(2, v/mx*95), x = 10 + i*((W-20)/n) + ((W-20)/n - bw)/2, y = 112 - h;
+    s += `<rect class="bar" style="animation-delay:${i*70}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="6" fill="url(#bg${id})"/>`;
+    s += `<text x="${x+bw/2}" y="${y-5}" font-size="9" text-anchor="middle" font-weight="700">${dec?f1(v):Math.round(v)}</text>`;
+    s += `<text x="${x+bw/2}" y="130" font-size="9" text-anchor="middle" opacity=".7">${labels[i]}</text>`;
+  });
+  $(id).innerHTML = s + "</svg>";
+}
+
+/* ---------- inel buget ---------- */
+let ringTarget = 339.3, ringOver = false;
+function animRing(){
+  const r = $("ring"); r.style.transition = "none"; r.style.strokeDashoffset = 339.3; void r.getBoundingClientRect();
+  r.style.transition = "stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)";
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{r.style.strokeDashoffset = ringTarget;}));
+}
+function setBudget(){
+  const v = prompt("Buget lunar pentru încărcări (lei). 0 = fără buget:", S.budget || "");
+  if(v === null) return;
+  const n = parseFloat(v.replace(",", ".")); S.budget = n > 0 ? n : 0; save(); render(); animRing();
+}
+
+/* ---------- randare ---------- */
+function render(){
+  $("s").innerHTML = S.stations.map((s,i)=>`<option value="${i}">${s.n}</option>`).join("");
+  $("sl-list").innerHTML = S.stations.map((s,i)=>
+    `${s.n} <button class="sm sec" onclick="delSt(${i})">șterge</button>` + (s.l ? ` <a href="${s.l}" target="_blank">hartă</a>` : "")).join("<br>");
+  const C = calc(), byM = {};
+  S.charges.forEach((c,i)=>{(byM[c.d.slice(0,7)] = byM[c.d.slice(0,7)] || []).push({...c, i});});
+  const months = Object.keys(byM).sort();
+  if(!openInit && months.length){openM.add(months[months.length-1]); openInit = true;}
+
+  /* acasă */
+  const mk = monthKey(new Date()), cur = byM[mk] || [];
+  const cp = cur.reduce((a,r)=>a+r.p,0), ck = cur.reduce((a,r)=>a+r.k,0);
+  $("hSpent").innerHTML = `<span data-n="${cp}" data-d="0" data-u=" lei">${Math.round(cp)} lei</span>`;
+  const pct = S.budget ? cp/S.budget : 0;
+  ringOver = pct > 1; ringTarget = 339.3*(1 - Math.min(1, pct));
+  $("ring").setAttribute("stroke", ringOver ? "url(#rr)" : "url(#rg)");
+  $("rpct").textContent = S.budget ? Math.round(pct*100)+"%" : "–";
+  $("hBud").textContent = S.budget ? (ringOver ? "peste buget cu "+f2(cp-S.budget)+" lei" : "din "+Math.round(S.budget)+" lei · mai ai "+f2(S.budget-cp)+" lei") : "Apasă ca să setezi bugetul lunar";
+  const box = (t,v,n,d,u)=>`<div class="stat"><span class="sub">${t}</span><b ${n!=null?`data-n="${n}" data-d="${d}" data-u="${u}"`:""}>${v}</b></div>`;
+  $("hStats").innerHTML = S.charges.length ? (
+    box("Energie luna aceasta", f1(ck)+" kWh", ck, 1, " kWh") +
+    box("Preț mediu lună", ck ? f2(cp/ck)+" lei/kWh" : "–", ck ? cp/ck : null, 2, " lei/kWh")) : "";
+  const rec = byDate().slice(-3).reverse();
+  $("recent").innerHTML = rec.length ? rec.map(r=>
+    `<div class="li" onclick="edit(${r.i})"><div><div class="a">${r.s}</div><div class="sub">${r.d.slice(8,10)}.${r.d.slice(5,7)}.${r.d.slice(0,4)} · ${f2(r.p/r.k)} lei/kWh</div></div><div class="b big">${f2(r.p)} lei<div class="sub" style="font-family:-apple-system;font-weight:500;letter-spacing:0">${f1(r.k)} kWh</div></div></div>`).join("")
+    : '<p class="sub">Apasă + ca să adaugi prima încărcare.</p>';
+
+  /* statistici */
+  let tk=0, tp=0, mxC=null; const cnt = {}, ps = {};
+  S.charges.forEach(c=>{tk+=c.k; tp+=c.p; if(!mxC||c.p>mxC.p) mxC=c; cnt[c.s]=(cnt[c.s]||0)+1; const q=ps[c.s]=ps[c.s]||{k:0,p:0}; q.k+=c.k; q.p+=c.p;});
+  let sK=0,sP=0,sKm=0; Object.values(C).forEach(r=>{sK+=r.aK; sP+=r.aP; sKm+=r.km;});
+  if(S.charges.length){
+    $("stats").innerHTML =
+      box("Total cheltuit", f2(tp)+" lei", tp, 2, " lei") + box("Total energie", f1(tk)+" kWh", tk, 1, " kWh") +
+      box("Preț mediu", f2(tp/tk)+" lei/kWh", tp/tk, 2, " lei/kWh") + box("Medie pe lună", f2(tp/months.length)+" lei", tp/months.length, 2, " lei") +
+      (sKm ? box("Consum mediu", f1(sK/sKm*100)+" kWh/100km", sK/sKm*100, 1, " kWh/100km") + box("Cost pe km", f2(sP/sKm)+" lei/km", sP/sKm, 2, " lei/km") : box("Consum mediu","–") + box("Cost pe km","–")) +
+      box("Cea mai scumpă", f2(mxC.p)+" lei", mxC.p, 2, " lei") + box("Stația preferată", favStation() || "–");
+    $("perst").innerHTML = "<b>Preț mediu pe stație:</b><br>" + Object.keys(ps).map(s=>`${s}: ${f2(ps[s].p/ps[s].k)} lei/kWh`).join("<br>");
+  } else {$("stats").innerHTML = '<p class="sub">Adaugă prima încărcare.</p>'; $("perst").innerHTML = "";}
+  const last = months.slice(-12), lab = last.map(m=>m.slice(5,7)+"."+m.slice(2,4));
+  bars("c1", lab, last.map(m=>byM[m].reduce((a,r)=>a+r.p,0)), false);
+  bars("c2", lab, last.map(m=>byM[m].reduce((a,r)=>a+r.k,0)), true);
+
+  /* istoric */
+  let h = "";
+  months.slice().reverse().forEach(m=>{
+    const rows = byM[m].sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:0), mi = parseInt(m.slice(5,7))-1;
+    const per = {}; let mkk=0, mp=0;
+    rows.forEach(r=>{const k=per[r.s]=per[r.s]||{k:0,p:0}; k.k+=r.k; k.p+=r.p; mkk+=r.k; mp+=r.p;});
+    const name = new Date(m+"-01").toLocaleDateString("ro-RO",{month:"long",year:"numeric"});
+    h += `<div class="month ${openM.has(m)?"open":""}" data-m="${m}" style="background-image:linear-gradient(hsla(${mi*30+140},45%,75%,.28),hsla(${mi*30+140},45%,75%,.28))">
+      <div class="mh" onclick="tm('${m}')"><h3 class="big">${name}</h3><div class="r big">${f2(mp)} lei <span class="chev">▼</span></div></div>
+      <div class="mb"><div class="mi"><table><tr><th>Zi</th><th class="n">kWh</th><th class="n">Preț</th><th class="n">lei/kWh</th><th>Stație</th><th></th></tr>`;
+    let lastW = null;
+    rows.forEach(r=>{
+      const w = Math.ceil(parseInt(r.d.slice(8,10))/7), c = C[r.i], pc = (popI === r.i) ? " pop" : "";
+      if(w!==lastW){h += `<tr><td class="wk" colspan="6">Săptămâna ${w}</td></tr>`; lastW = w;}
+      h += `<tr data-i="${r.i}" class="${pc}"><td>${r.d.slice(8,10)}.${r.d.slice(5,7)}</td><td class="n">${f2(r.k)}</td><td class="n">${f2(r.p)}</td><td class="n">${f2(r.p/r.k)}</td><td>${r.s}</td><td class="n"><button class="sm sec" onclick="edit(${r.i})">✎</button><button class="sm sec" onclick="del(${r.i})">✕</button></td></tr>`;
+      if(r.o || c) h += `<tr data-i="${r.i}"><td colspan="6" class="sub" style="padding-top:0">${r.o ? r.o+" km" : ""}${c ? " · "+c.km+" km parcurși · "+f1(c.cons)+" kWh/100km · "+f2(c.cpk)+" lei/km" : ""}</td></tr>`;
+    });
+    h += `<tr class="tot"><td colspan="6" style="padding-top:10px">Pe stații</td></tr>`;
+    Object.keys(per).forEach(s=>{
+      h += `<tr><td colspan="2">${s}</td><td class="n" colspan="2">${f1(per[s].k)} kWh</td><td class="n" colspan="2">${f2(per[s].p)} lei</td></tr>`;
+    });
+    h += `<tr class="tot"><td colspan="2">Total lună</td><td class="n" colspan="2">${f1(mkk)} kWh</td><td class="n" colspan="2">${f2(mp)} lei</td></tr>
+      <tr><td colspan="6" class="sub">Preț mediu: ${f2(mp/mkk)} lei/kWh</td></tr></table></div></div></div>`;
+  });
+  $("out").innerHTML = h || '<div class="card"><p class="sub">Nicio încărcare încă.</p></div>';
+  popI = null;
+}
+function tm(m){
+  const el = document.querySelector(`.month[data-m="${m}"]`); if(!el) return;
+  el.classList.toggle("open"); el.classList.contains("open") ? openM.add(m) : openM.delete(m); tap();
+}
+
+/* ---------- panou de jos ---------- */
+function openSheet(i){
+  if(typeof i === "number"){
+    const c = S.charges[i]; editIdx = i;
+    let si = S.stations.findIndex(s=>s.n===c.s);
+    if(si < 0){S.stations.push({n:c.s, b:"Altă"}); si = S.stations.length-1; render();}
+    $("d").value = c.d; $("k").value = c.k; $("p").value = c.p; $("o").value = c.o || ""; $("s").value = si; pAuto = false;
+    $("ft").textContent = "Editează încărcarea"; $("add").textContent = "Actualizează"; $("hint").textContent = "";
+  } else {
+    editIdx = null; $("k").value = ""; $("p").value = ""; $("o").value = ""; $("d").valueAsDate = new Date(); pAuto = true;
+    const li = lastInfo(); if(li){const si = S.stations.findIndex(s=>s.n===li.s); if(si>=0) $("s").value = si;}
+    $("ft").textContent = "Încărcare nouă"; $("add").textContent = "Salvează încărcarea";
+    $("hint").textContent = li ? `Completează doar kWh: prețul se calculează din ultimul preț (${f2(li.ppk)} lei/kWh).` : "";
+  }
+  tap(); document.body.classList.add("so");
+}
+function closeSheet(){document.body.classList.remove("so"); $("sheet").style.transform = "";}
+$("k").addEventListener("input", ()=>{
+  const li = lastInfo(), k = parseFloat($("k").value);
+  if(pAuto && li && k > 0) $("p").value = f2(k*li.ppk);
+});
+$("p").addEventListener("input", ()=>{pAuto = false;});
+$("plin").onclick = ()=>{
+  $("d").valueAsDate = new Date(); const f = favStation();
+  if(f){const si = S.stations.findIndex(s=>s.n===f); if(si>=0) $("s").value = si;}
+  tap(); $("k").focus();
+};
+$("newst").onclick = ()=>{closeSheet(); setTimeout(()=>go("map"), 250);};
+$("add").onclick = ()=>{
+  const k = parseFloat($("k").value), p = parseFloat($("p").value), d = $("d").value, st = S.stations[$("s").value], o = parseInt($("o").value);
+  if(!d || !(k>0) || !(p>=0) || !st){alert("Completează data, kWh, prețul și stația."); return;}
+  const c = {d, k, p, s: st.n}; if(o>0) c.o = o;
+  if(editIdx !== null){S.charges[editIdx] = c; popI = editIdx;} else {S.charges.push(c); popI = S.charges.length-1;}
+  closeSheet(); tap(); save(); render();
+  if(curTab === "hist") $("t-hist").querySelector(".pop")?.scrollIntoView({block:"center", behavior:"smooth"});
+  if(curTab === "home") animRing();
+};
+/* tragi panoul în jos ca să îl închizi */
+(function(){
+  let y0 = null, dy = 0; const g = $("grab"), sh = $("sheet");
+  g.addEventListener("touchstart", e=>{y0 = e.touches[0].clientY; sh.style.transition = "none";}, {passive:true});
+  g.addEventListener("touchmove", e=>{if(y0 === null) return; dy = Math.max(0, e.touches[0].clientY - y0); sh.style.transform = `translateY(${dy}px)`;}, {passive:true});
+  g.addEventListener("touchend", ()=>{sh.style.transition = ""; sh.style.transform = ""; if(dy > 90) closeSheet(); y0 = null; dy = 0;});
+})();
+
+$("fbb").onclick = ()=>{
+  const c = {};
+  $("fbt").value.replace(/["']?(\w+)["']?\s*:\s*["']([^"']*)["']/g, (m,k,v)=>{c[k] = v; return m;});
+  if(!c.apiKey || !c.projectId){alert("Nu găsesc apiKey și projectId. Lipește tot blocul firebaseConfig."); return;}
+  try{localStorage.setItem("fbcfg", JSON.stringify(c));}catch(e){}
+  location.reload();
+};
+$("adds").onclick = ()=>{
+  const n = $("sn").value.trim(); if(!n) return;
+  S.stations.push({n, b: $("sb").value, l: $("sl").value.trim()});
+  $("sn").value = ""; $("sl").value = ""; tap(); save(); render();
+};
+function edit(i){openSheet(i);}
+function del(i){
+  if(!confirm("Ștergi încărcarea?")) return; tap();
+  document.querySelectorAll(`tr[data-i="${i}"]`).forEach(e=>e.classList.add("out"));
+  setTimeout(()=>{S.charges.splice(i,1); save(); render();}, 280);
+}
+function delSt(i){if(confirm("Ștergi stația din listă? Încărcările vechi rămân.")){S.stations.splice(i,1); save(); render();}}
+init();
+</script>
+</body>
+</html>
