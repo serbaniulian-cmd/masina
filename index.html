@@ -11,11 +11,11 @@
 <title>Încărcare mașină</title>
 <style>
 :root{--tx:#14171c;--mut:#5f6671;--gb:rgba(255,255,255,.62);--ge:rgba(255,255,255,.14);--bd:rgba(255,255,255,.7);--in:rgba(255,255,255,.38);--ins:rgba(30,40,60,.10);--sh:0 14px 40px rgba(40,50,75,.16);--hi:rgba(255,255,255,.95);
---bgA:#f7f8fa;--bgB:#d5d9e1;--bgC:#b9c0cc;--blob1:#ffffff;--blob2:#aab3c2;--navbg:rgba(255,255,255,.5)}
+--bgA:#f1f6ff;--bgB:#dbe5fa;--bgC:#c9d6f0;--blob1:#7aa7ff;--blob2:#ff9ecb;--navbg:rgba(255,255,255,.5);--gk:#059669;--gp:#d97706;--gr:#2563eb}
 @media(prefers-color-scheme:dark){:root{--tx:#f3f5f8;--mut:#a6adb8;--gb:rgba(255,255,255,.16);--ge:rgba(255,255,255,.04);--bd:rgba(255,255,255,.22);--in:rgba(255,255,255,.07);--ins:rgba(0,0,0,.35);--sh:0 14px 40px rgba(0,0,0,.5);--hi:rgba(255,255,255,.35);
---bgA:#3a3e46;--bgB:#1b1d22;--bgC:#101215;--blob1:#8d96a6;--blob2:#5d6676;--navbg:rgba(40,43,50,.55)}}
+--bgA:#262d4d;--bgB:#14172b;--bgC:#0b0d1a;--blob1:#3b6cff;--blob2:#a855f7;--navbg:rgba(40,43,60,.55);--gk:#34d399;--gp:#fbbf24;--gr:#7ab0ff}}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{min-height:100%;background:radial-gradient(120% 70% at 10% 0%,var(--bgA),transparent 60%),radial-gradient(100% 60% at 100% 100%,var(--bgC),transparent 65%),linear-gradient(170deg,var(--bgB),var(--bgC)) fixed}
+html{min-height:100%;background:radial-gradient(60% 40% at 92% 8%,rgba(52,211,153,.38),transparent 70%),radial-gradient(70% 45% at 0% 70%,rgba(251,146,60,.28),transparent 70%),radial-gradient(120% 70% at 10% 0%,var(--bgA),transparent 60%),radial-gradient(100% 60% at 100% 100%,var(--bgC),transparent 65%),linear-gradient(170deg,var(--bgB),var(--bgC)) fixed}
 body{margin:0;font-family:-apple-system,"SF Pro Display",system-ui,sans-serif;color:var(--tx);padding:0 12px calc(130px + env(safe-area-inset-bottom));position:relative;overflow-x:hidden}
 body::before,body::after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(60px)}
 body::before{width:300px;height:300px;background:var(--blob1);top:8%;left:-110px;opacity:.85;animation:fl1 18s ease-in-out infinite alternate}
@@ -29,7 +29,7 @@ body::after{width:340px;height:340px;background:var(--blob2);bottom:4%;right:-14
 #hd.sm{background:var(--navbg);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);box-shadow:0 1px 0 var(--bd),0 8px 24px rgba(40,50,75,.08);padding-top:calc(env(safe-area-inset-top) + 4px);padding-bottom:6px}
 #hd .k{font-size:12px;color:var(--mut);font-weight:700;letter-spacing:.5px;text-transform:uppercase;transition:all .3s;max-height:20px;overflow:hidden}
 #hd.sm .k{max-height:0;opacity:0}
-#ttl{margin:0;font-size:36px;transition:font-size .3s;background:linear-gradient(180deg,var(--tx),var(--mut));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+#ttl{margin:0;font-size:36px;transition:font-size .3s;background:linear-gradient(90deg,#3b82f6,#8b5cf6 55%,#ec4899);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 #hd.sm #ttl{font-size:20px}
 
 h2{font-size:16px;margin:0 0 10px;letter-spacing:-.2px}
@@ -47,7 +47,7 @@ input::placeholder{color:var(--mut);opacity:.7}
 input[type=date]{line-height:26px;padding-right:8px}
 input[type=date]::-webkit-date-and-time-value{text-align:left;min-width:0}
 select{background-image:linear-gradient(45deg,transparent 50%,var(--mut) 50%),linear-gradient(135deg,var(--mut) 50%,transparent 50%);background-position:calc(100% - 22px) 22px,calc(100% - 17px) 22px;background-size:5px 5px;background-repeat:no-repeat;padding-right:34px}
-button{position:relative;overflow:hidden;padding:13px;border:1px solid rgba(255,255,255,.4);border-radius:22px;background:linear-gradient(180deg,rgba(95,102,115,.95),rgba(42,46,54,.95));color:#fff;font-size:15px;font-weight:700;width:100%;margin-top:12px;box-shadow:0 8px 20px rgba(25,30,40,.3),inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -2px 6px rgba(0,0,0,.25);transition:transform .15s ease}
+button{position:relative;overflow:hidden;padding:13px;border:1px solid rgba(255,255,255,.4);border-radius:22px;background:linear-gradient(180deg,#5b8cff,#6d4aff);color:#fff;font-size:15px;font-weight:700;width:100%;margin-top:12px;box-shadow:0 8px 20px rgba(80,90,255,.4),inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -2px 6px rgba(0,0,0,.25);transition:transform .15s ease}
 button::after{content:"";position:absolute;left:8%;right:8%;top:2px;height:45%;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.35),transparent);pointer-events:none}
 button:active{transform:scale(.96)}
 button.sec{background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.2));color:var(--tx);border:1px solid var(--bd);box-shadow:0 4px 14px rgba(40,50,75,.1),inset 0 1.5px 0 var(--hi)}
@@ -102,7 +102,7 @@ svg .bar{filter:drop-shadow(0 2px 3px rgba(40,50,75,.25));transform-box:fill-box
 .ni svg{display:block;margin:0 auto 2px;width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* buton + și panou de jos */
-#fab{position:fixed;z-index:31;right:20px;bottom:calc(92px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(95,102,115,.97),rgba(35,39,46,.97));border:1px solid rgba(255,255,255,.45);box-shadow:0 12px 28px rgba(25,30,40,.4),inset 0 1.5px 0 rgba(255,255,255,.5);color:#fff;cursor:pointer;transition:transform .35s cubic-bezier(.3,1.4,.4,1),opacity .25s}
+#fab{position:fixed;z-index:31;right:20px;bottom:calc(92px + env(safe-area-inset-bottom));width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#4f8bff,#8b5cf6 60%,#ec4899);border:1px solid rgba(255,255,255,.45);box-shadow:0 12px 28px rgba(25,30,40,.4),inset 0 1.5px 0 rgba(255,255,255,.5);color:#fff;cursor:pointer;transition:transform .35s cubic-bezier(.3,1.4,.4,1),opacity .25s}
 #fab:active{transform:scale(.9)}
 #fab svg{width:28px;height:28px;stroke:#fff;stroke-width:2.6;stroke-linecap:round;fill:none}
 body.so #fab{transform:scale(0) rotate(90deg);opacity:0;pointer-events:none}
@@ -115,6 +115,14 @@ body.so #sheet{transform:none}
 #grab::after{content:"";display:block;width:44px;height:5px;border-radius:3px;background:var(--mut);opacity:.5;margin:0 auto}
 #st{position:fixed;z-index:25;left:16px;bottom:calc(98px + env(safe-area-inset-bottom));font-size:11px;color:var(--mut);padding:3px 9px;border-radius:10px;background:var(--in);border:1px solid var(--bd);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 #st:empty{display:none}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;box-shadow:0 0 0 2px rgba(255,255,255,.45)}
+.ck{color:var(--gk);font-weight:600}.cp{color:var(--gp);font-weight:700}.cr{color:var(--gr)}
+.li .b{color:var(--gp)}.mh .r{color:var(--gp)}
+.stat{--a:#3b82f6}.stat:nth-child(2n){--a:#10b981}.stat:nth-child(3n){--a:#f59e0b}.stat:nth-child(4n){--a:#ec4899}.stat:nth-child(5n){--a:#8b5cf6}
+.stat{background:linear-gradient(135deg,color-mix(in srgb,var(--a) 30%,transparent),color-mix(in srgb,var(--a) 6%,transparent));border-left:4px solid var(--a)}
+.stat b{color:color-mix(in srgb,var(--a) 72%,var(--tx))}
+.ni.on{color:#3b82f6}
+@media(prefers-color-scheme:dark){.ni.on{color:#8bb4ff}}
 </style>
 </head>
 <body>
@@ -127,7 +135,7 @@ body.so #sheet{transform:none}
 <section class="tab on" id="t-home">
 <div class="card ringbox" onclick="setBudget()">
 <svg width="132" height="132" viewBox="0 0 132 132">
-<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c3c9d4"/><stop offset="1" stop-color="#4b525e"/></linearGradient>
+<defs><linearGradient id="rg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
 <linearGradient id="rr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3a6a8"/><stop offset="1" stop-color="#d9363e"/></linearGradient></defs>
 <circle cx="66" cy="66" r="54" fill="none" stroke="rgba(128,134,146,.25)" stroke-width="14"/>
 <circle id="ring" cx="66" cy="66" r="54" fill="none" stroke="url(#rg)" stroke-width="14" stroke-linecap="round" transform="rotate(-90 66 66)" style="stroke-dasharray:339.3;stroke-dashoffset:339.3;transition:stroke-dashoffset 1.2s cubic-bezier(.2,.8,.2,1)"/>
@@ -332,10 +340,12 @@ function lastInfo(){const a = byDate(); const l = a[a.length-1]; return l ? {s:l
 function favStation(){const c = {}; S.charges.forEach(x=>c[x.s]=(c[x.s]||0)+1); return Object.keys(c).sort((a,b)=>c[b]-c[a])[0];}
 function monthKey(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");}
 
-function bars(id, labels, vals, dec){
+function stc(n){const l=(n||"").toLowerCase(); if(l.includes("eldrive")) return "#10b981"; if(l.includes("plugpoint")) return "#3b82f6"; let h=0; for(const ch of l) h=(h*31+ch.charCodeAt(0))%360; return `hsl(${h},70%,55%)`;}
+const dot = n => `<i class="dot" style="background:${stc(n)}"></i>${n}`;
+function bars(id, labels, vals, dec, c0, c1){
   if(!vals.length){$(id).innerHTML = '<p class="sub">Nicio dată încă.</p>'; return;}
   const W = 320, H = 150, n = vals.length, mx = Math.max(...vals) || 1, bw = Math.min(34, (W-20)/n - 6);
-  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="bg${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c3c9d4"/><stop offset="1" stop-color="#6f7886"/></linearGradient></defs>`;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%"><defs><linearGradient id="bg${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c0}"/><stop offset="1" stop-color="${c1}"/></linearGradient></defs>`;
   vals.forEach((v,i)=>{
     const h = Math.max(2, v/mx*95), x = 10 + i*((W-20)/n) + ((W-20)/n - bw)/2, y = 112 - h;
     s += `<rect class="bar" style="animation-delay:${i*70}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="6" fill="url(#bg${id})"/>`;
@@ -383,7 +393,7 @@ function render(){
     box("Preț mediu lună", ck ? f2(cp/ck)+" lei/kWh" : "–", ck ? cp/ck : null, 2, " lei/kWh")) : "";
   const rec = byDate().slice(-3).reverse();
   $("recent").innerHTML = rec.length ? rec.map(r=>
-    `<div class="li" onclick="edit(${r.i})"><div><div class="a">${r.s}</div><div class="sub">${r.d.slice(8,10)}.${r.d.slice(5,7)}.${r.d.slice(0,4)} · ${f2(r.p/r.k)} lei/kWh</div></div><div class="b big">${f2(r.p)} lei<div class="sub" style="font-family:-apple-system;font-weight:500;letter-spacing:0">${f1(r.k)} kWh</div></div></div>`).join("")
+    `<div class="li" onclick="edit(${r.i})"><div><div class="a">${dot(r.s)}</div><div class="sub">${r.d.slice(8,10)}.${r.d.slice(5,7)}.${r.d.slice(0,4)} · ${f2(r.p/r.k)} lei/kWh</div></div><div class="b big">${f2(r.p)} lei<div class="sub" style="font-family:-apple-system;font-weight:500;letter-spacing:0">${f1(r.k)} kWh</div></div></div>`).join("")
     : '<p class="sub">Apasă + ca să adaugi prima încărcare.</p>';
 
   /* statistici */
@@ -396,11 +406,11 @@ function render(){
       box("Preț mediu", f2(tp/tk)+" lei/kWh", tp/tk, 2, " lei/kWh") + box("Medie pe lună", f2(tp/months.length)+" lei", tp/months.length, 2, " lei") +
       (sKm ? box("Consum mediu", f1(sK/sKm*100)+" kWh/100km", sK/sKm*100, 1, " kWh/100km") + box("Cost pe km", f2(sP/sKm)+" lei/km", sP/sKm, 2, " lei/km") : box("Consum mediu","–") + box("Cost pe km","–")) +
       box("Cea mai scumpă", f2(mxC.p)+" lei", mxC.p, 2, " lei") + box("Stația preferată", favStation() || "–");
-    $("perst").innerHTML = "<b>Preț mediu pe stație:</b><br>" + Object.keys(ps).map(s=>`${s}: ${f2(ps[s].p/ps[s].k)} lei/kWh`).join("<br>");
+    $("perst").innerHTML = "<b>Preț mediu pe stație:</b><br>" + Object.keys(ps).map(s=>`${dot(s)}: <b style="color:var(--gr)">${f2(ps[s].p/ps[s].k)} lei/kWh</b>`).join("<br>");
   } else {$("stats").innerHTML = '<p class="sub">Adaugă prima încărcare.</p>'; $("perst").innerHTML = "";}
   const last = months.slice(-12), lab = last.map(m=>m.slice(5,7)+"."+m.slice(2,4));
-  bars("c1", lab, last.map(m=>byM[m].reduce((a,r)=>a+r.p,0)), false);
-  bars("c2", lab, last.map(m=>byM[m].reduce((a,r)=>a+r.k,0)), true);
+  bars("c1", lab, last.map(m=>byM[m].reduce((a,r)=>a+r.p,0)), false, "#fcd34d", "#f97316");
+  bars("c2", lab, last.map(m=>byM[m].reduce((a,r)=>a+r.k,0)), true, "#6ee7b7", "#059669");
 
   /* istoric */
   let h = "";
@@ -409,21 +419,21 @@ function render(){
     const per = {}; let mkk=0, mp=0;
     rows.forEach(r=>{const k=per[r.s]=per[r.s]||{k:0,p:0}; k.k+=r.k; k.p+=r.p; mkk+=r.k; mp+=r.p;});
     const name = new Date(m+"-01").toLocaleDateString("ro-RO",{month:"long",year:"numeric"});
-    h += `<div class="month ${openM.has(m)?"open":""}" data-m="${m}" style="background-image:linear-gradient(hsla(${mi*30+140},45%,75%,.28),hsla(${mi*30+140},45%,75%,.28))">
+    h += `<div class="month ${openM.has(m)?"open":""}" data-m="${m}" style="background-image:linear-gradient(hsla(${mi*30},75%,62%,.32),hsla(${mi*30},75%,62%,.32))">
       <div class="mh" onclick="tm('${m}')"><h3 class="big">${name}</h3><div class="r big">${f2(mp)} lei <span class="chev">▼</span></div></div>
       <div class="mb"><div class="mi"><table><tr><th>Zi</th><th class="n">kWh</th><th class="n">Preț</th><th class="n">lei/kWh</th><th>Stație</th><th></th></tr>`;
     let lastW = null;
     rows.forEach(r=>{
       const w = Math.ceil(parseInt(r.d.slice(8,10))/7), c = C[r.i], pc = (popI === r.i) ? " pop" : "";
       if(w!==lastW){h += `<tr><td class="wk" colspan="6">Săptămâna ${w}</td></tr>`; lastW = w;}
-      h += `<tr data-i="${r.i}" class="${pc}"><td>${r.d.slice(8,10)}.${r.d.slice(5,7)}</td><td class="n">${f2(r.k)}</td><td class="n">${f2(r.p)}</td><td class="n">${f2(r.p/r.k)}</td><td>${r.s}</td><td class="n"><button class="sm sec" onclick="edit(${r.i})">✎</button><button class="sm sec" onclick="del(${r.i})">✕</button></td></tr>`;
+      h += `<tr data-i="${r.i}" class="${pc}"><td>${r.d.slice(8,10)}.${r.d.slice(5,7)}</td><td class="n ck">${f2(r.k)}</td><td class="n cp">${f2(r.p)}</td><td class="n cr">${f2(r.p/r.k)}</td><td>${dot(r.s)}</td><td class="n"><button class="sm sec" onclick="edit(${r.i})">✎</button><button class="sm sec" onclick="del(${r.i})">✕</button></td></tr>`;
       if(r.o || c) h += `<tr data-i="${r.i}"><td colspan="6" class="sub" style="padding-top:0">${r.o ? r.o+" km" : ""}${c ? " · "+c.km+" km parcurși · "+f1(c.cons)+" kWh/100km · "+f2(c.cpk)+" lei/km" : ""}</td></tr>`;
     });
     h += `<tr class="tot"><td colspan="6" style="padding-top:10px">Pe stații</td></tr>`;
     Object.keys(per).forEach(s=>{
-      h += `<tr><td colspan="2">${s}</td><td class="n" colspan="2">${f1(per[s].k)} kWh</td><td class="n" colspan="2">${f2(per[s].p)} lei</td></tr>`;
+      h += `<tr><td colspan="2">${dot(s)}</td><td class="n ck" colspan="2">${f1(per[s].k)} kWh</td><td class="n cp" colspan="2">${f2(per[s].p)} lei</td></tr>`;
     });
-    h += `<tr class="tot"><td colspan="2">Total lună</td><td class="n" colspan="2">${f1(mkk)} kWh</td><td class="n" colspan="2">${f2(mp)} lei</td></tr>
+    h += `<tr class="tot"><td colspan="2">Total lună</td><td class="n ck" colspan="2">${f1(mkk)} kWh</td><td class="n cp" colspan="2">${f2(mp)} lei</td></tr>
       <tr><td colspan="6" class="sub">Preț mediu: ${f2(mp/mkk)} lei/kWh</td></tr></table></div></div></div>`;
   });
   $("out").innerHTML = h || '<div class="card"><p class="sub">Nicio încărcare încă.</p></div>';
