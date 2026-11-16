@@ -57,11 +57,12 @@ body.so #sh{transform:none}
 @media(min-width:800px){.hero{height:400px}.ov{bottom:auto;top:50%;transform:translateY(-50%);width:44%}.v{font-size:68px}
 #sh{left:50%;right:auto;width:460px;bottom:auto;top:50%;border-radius:30px;transform:translate(-50%,-44%) scale(.94);opacity:0;pointer-events:none;transition:.4s}body.so #sh{transform:translate(-50%,-50%);opacity:1;pointer-events:auto}#fab{right:max(18px,calc(50% - 560px))}}
 .card::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(120% 60% at var(--sx,0%) var(--sy,0%),rgba(255,255,255,.2),transparent 55%)}
+.cap{font-size:13px;text-align:center;min-height:20px;margin-top:6px;color:var(--mu)}.cap b{color:#fff;font-size:15px}svg .b{cursor:pointer}svg .sel{stroke:#fff;stroke-width:2}
 </style></head><body>
 <div class="w">
 <section id="a0" class="card hero"><canvas id="cv"></canvas><div class="ov"><div class="mu">⚡ Luna aceasta</div><div class="v big" id="hl">0 lei</div><div class="mu" id="hk"></div><div class="bud"><i id="bf"></i></div><div class="mu" id="hb" onclick="setB()"></div></div></section>
 <div class="kp" id="kp"></div>
-<section id="a1" class="rv"><div class="lg" id="lg"></div><div class="two"><div class="card"><h2>Cheltuieli · lei / lună</h2><div id="c1"></div></div><div class="card"><h2>Energie · kWh / lună</h2><div id="c2"></div></div></div></section>
+<section id="a1" class="rv"><div class="lg" id="lg"></div><div class="two"><div class="card"><h2>Cheltuieli · lei / lună</h2><div id="c1"></div><div class="cap" id="c1t"></div></div><div class="card"><h2>Energie · kWh / lună</h2><div id="c2"></div><div class="cap" id="c2t"></div></div></div></section>
 <section id="a2" class="rv"><div id="out"></div></section>
 <section id="a3" class="card rv"><h2>Harta stațiilor</h2>
 <div class="r2"><button class="sm" onclick="mp('Eldrive')"><i class="dot" style="background:#3b82f6"></i>Eldrive</button><button class="sm" onclick="mp('PlugPoint')"><i class="dot" style="background:#facc15"></i>PlugPoint</button><button class="sm" onclick="mp('stație încărcare electrică')">Toate</button></div>
@@ -100,9 +101,10 @@ function bar(id,lb,data,dec){
  const W=180,n=data.length,tot=data.map(o=>o[BR[0]]+o[BR[1]]+o[BR[2]]),mx=Math.max(...tot)||1,bw=Math.min(30,(W-20)/n-6);
  let s=`<svg viewBox="0 0 ${W} 150"><defs>`+BR.map((b,k)=>`<linearGradient id="g${id}${k}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${CL[b][0]}"/><stop offset="1" stop-color="${CL[b][1]}"/></linearGradient>`).join("")+`</defs>`;
  data.forEach((o,i)=>{const x=10+i*((W-20)/n)+((W-20)/n-bw)/2;let y=112;const pr=BR.map((b,k)=>({k,v:o[b]})).filter(q=>q.v>0);
-  pr.forEach((q,j)=>{const h=Math.max(2,q.v/mx*95);y-=h;s+=`<rect class="b" style="animation-delay:${i*70}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="${j==pr.length-1?6:1}" fill="url(#g${id}${q.k})"/>`});
+  pr.forEach((q,j)=>{const h=Math.max(2,q.v/mx*95);y-=h;s+=`<rect class="b" data-b="${BR[q.k]}" data-l="${lb[i]}" data-v="${dec?f(q.v,1)+" kWh":f(q.v)+" lei"}" style="animation-delay:${i*70}ms" x="${x}" y="${y}" width="${bw}" height="${h}" rx="${j==pr.length-1?6:1}" fill="url(#g${id}${q.k})"/>`});
   s+=`<text x="${x+bw/2}" y="${y-5}" font-size="10" text-anchor="middle" font-weight="700">${dec?f(tot[i],1):Math.round(tot[i])}</text><text x="${x+bw/2}" y="130" font-size="10" text-anchor="middle" opacity=".7">${lb[i]}</text>`});
- $(id).innerHTML=s+"</svg>"}
+ $(id).innerHTML=s+"</svg>";$(id+"t").textContent="Atinge o bară ca să vezi suma pe stație";
+ $(id).onclick=e=>{const r=e.target.closest("rect.b");if(!r)return;tap();$(id).querySelectorAll(".sel").forEach(q=>q.classList.remove("sel"));r.classList.add("sel");$(id+"t").innerHTML=`<i class="dot" style="background:${CL[r.dataset.b][2]}"></i>${r.dataset.b} · ${r.dataset.l}: <b>${r.dataset.v}</b>`}}
 function rn(){
  $("s").innerHTML=S.stations.map((s,i)=>`<option value="${i}">${s.n}</option>`).join("");
  $("sl").innerHTML=S.stations.map((s,i)=>`${dot(s.n)} <button class="sm" onclick="dS(${i})">șterge</button>`).join("<br>");
