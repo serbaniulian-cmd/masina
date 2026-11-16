@@ -67,12 +67,13 @@ body.so #sh{transform:none}
 <section id="a3" class="card rv"><h2>Harta stațiilor</h2>
 <div class="r2"><button class="sm" onclick="mp('Eldrive')"><i class="dot" style="background:#3b82f6"></i>Eldrive</button><button class="sm" onclick="mp('PlugPoint')"><i class="dot" style="background:#facc15"></i>PlugPoint</button><button class="sm" onclick="mp('stație încărcare electrică')">Toate</button></div>
 <iframe id="m" allowfullscreen></iframe><a id="ol" class="mu" target="_blank" style="color:var(--mu)">Deschide în Google Maps ↗</a>
-<label>Stație nouă (numele de pe hartă)</label><input id="sn" placeholder="ex: Eldrive - Kaufland Pipera">
+<label>Stație nouă (numele de pe hartă)</label><input id="sn" placeholder="ex: Eldrive - Kaufland Pipera" style="height:58px;font-size:17px">
+<label>Link Google Maps (opțional)</label><input id="sl2" placeholder="lipește linkul stației" style="height:58px;font-size:17px">
 <div class="r"><div><label>Rețea</label><select id="sb"><option>Eldrive</option><option>PlugPoint</option><option>Altă</option></select></div><div style="display:flex;align-items:flex-end"><button id="adds" style="margin:0;height:48px;padding:0">Adaugă</button></div></div>
 <div id="sl" class="mu" style="margin-top:10px"></div></section>
 </div>
 <div id="st"></div>
-<nav id="nv"><a href="#a0" class="on">⚡<small>Acasă</small></a><a href="#a1">📊<small>Statistici</small></a><a href="#a2">🗓<small>Istoric</small></a><a href="#a3">📍<small>Hartă</small></a></nav>
+<nav id="nv"><a href="#a0" class="on">⚡<small>Acasă</small></a><a href="#a1">📊<small>Statistici</small></a><a href="#a2">🕒<small>Istoric</small></a><a href="#a3">📍<small>Hartă</small></a></nav>
 <button id="fab" onclick="os()">+</button>
 <div id="bk" onclick="cs()"></div>
 <div id="sh"><h2 id="ft" class="big" style="font-size:22px;color:#fff">Încărcare nouă</h2>
@@ -82,6 +83,7 @@ body.so #sh{transform:none}
 <div class="mu" id="hint" style="margin:6px 4px 0"></div>
 <button class="sm" id="smb" style="width:100%;margin:10px 0 0;padding:11px">📍 Vezi stația pe hartă</button>
 <iframe id="sm" style="display:none;height:200px"></iframe><a id="sol" class="mu" target="_blank" style="display:block;margin-top:6px;color:var(--mu)"></a>
+<input id="sli" placeholder="Lipește linkul Google Maps al stației" style="display:none;height:56px;margin-top:8px;font-size:17px">
 <label>Kilometraj (opțional)</label><input type="number" id="o" inputmode="numeric" placeholder="ex: 24850">
 <button id="add">Salvează</button></div>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -131,9 +133,11 @@ function rn(){
   h+=`<tr class="tt"><td colspan="2">Total lună</td><td class="ck" colspan="2">${f(k,1)} kWh</td><td class="cp" colspan="2">${f(p)} lei · ${f(p/k)}/kWh</td></tr></table></div></div></div>`});
  $("out").innerHTML=h||'<div class="card mu">Nicio încărcare încă. Apasă +.</div>';pp=null;cnt()}
 const tg=m=>{tap();const e=document.querySelector(`[data-m="${m}"]`);e.classList.toggle("open");e.classList.contains("open")?op.add(m):op.delete(m)};
-const cs=()=>{document.body.classList.remove("so");$("sm").style.display="none";$("sm").removeAttribute("src");$("sol").textContent=""};
-function smap(){const n=S.stations[$("s").value];if(!n)return;const q=n.n;$("sm").style.display="block";$("sm").src="https://www.google.com/maps?output=embed&z=15&q="+encodeURIComponent(q);$("sol").href="https://www.google.com/maps/search/"+encodeURIComponent(q);$("sol").textContent="Deschide „"+q+"” în Google Maps ↗"}
-$("smb").onclick=()=>{tap();smap()};$("s").onchange=()=>{if($("sm").style.display=="block")smap()};
+const cs=()=>{document.body.classList.remove("so");$("sm").style.display="none";$("sm").removeAttribute("src");$("sol").textContent="";$("sli").style.display="none"};
+function smap(){const n=S.stations[$("s").value];if(!n)return;const m=(n.l||"").match(/@(-?\d+\.\d+),(-?\d+\.\d+)|!3d(-?\d+\.\d+)!4d(-?\d+\.\d+)/),q=m?(m[1]||m[3])+","+(m[2]||m[4]):n.n;
+ $("sm").style.display="block";$("sli").style.display="block";$("sli").value=n.l||"";$("sm").src="https://www.google.com/maps?output=embed&z=16&q="+encodeURIComponent(q);
+ $("sol").href=n.l||"https://www.google.com/maps/search/"+encodeURIComponent(n.n);$("sol").textContent="Deschide „"+n.n+"” în Google Maps ↗"}
+$("smb").onclick=()=>{tap();smap()};$("sli").onchange=()=>{const n=S.stations[$("s").value];if(!n)return;n.l=$("sli").value.trim();sv();smap()};$("s").onchange=()=>{if($("sm").style.display=="block")smap()};
 function os(i){tap();const li=lst();if(typeof i=="number"){const c=S.charges[i];ei=i;let si=S.stations.findIndex(s=>s.n==c.s);if(si<0){S.stations.push({n:c.s,b:"Altă"});si=S.stations.length-1;rn()}
  $("d").value=c.d;$("k").value=c.k;$("p").value=c.p;$("o").value=c.o||"";$("s").value=si;pa=0;$("ft").textContent="Editează încărcarea";$("hint").textContent=""}
  else{ei=null;$("k").value=$("p").value=$("o").value="";$("d").valueAsDate=new Date();pa=1;if(li){const si=S.stations.findIndex(s=>s.n==li.s);if(si>=0)$("s").value=si}$("ft").textContent="Încărcare nouă";$("hint").textContent=li?`Prețul se calculează din ultimul tarif (${f(li.q)} lei/kWh)`:""}
@@ -143,7 +147,7 @@ $("add").onclick=()=>{const k=parseFloat($("k").value),p=parseFloat($("p").value
  const c={d,k,p,s:st.n};if(o>0)c.o=o;if(ei!==null){S.charges[ei]=c;pp=ei}else{S.charges.push(c);pp=S.charges.length-1}tap();PL=1;cs();sv();rn()};
 function dl(i){if(!confirm("Ștergi încărcarea?"))return;document.querySelectorAll(`tr[data-i="${i}"]`).forEach(e=>e.classList.add("out"));setTimeout(()=>{S.charges.splice(i,1);sv();rn()},280)}
 function dS(i){if(confirm("Ștergi stația din listă?")){S.stations.splice(i,1);sv();rn()}}
-$("adds").onclick=()=>{const n=$("sn").value.trim();if(!n)return;S.stations.push({n,b:$("sb").value});$("sn").value="";sv();rn()};
+$("adds").onclick=()=>{const n=$("sn").value.trim();if(!n)return;S.stations.push({n,b:$("sb").value,l:$("sl2").value.trim()});$("sn").value=$("sl2").value="";sv();rn()};
 function setB(){const v=prompt("Buget lunar (lei), 0 = fără:",S.budget||"");if(v===null)return;const n=parseFloat(v.replace(",","."));S.budget=n>0?n:0;sv();rn()}
 function mp(q){const b="https://www.google.com/maps?output=embed&z=12&q="+encodeURIComponent(q);$("ol").href="https://www.google.com/maps/search/"+encodeURIComponent(q);navigator.geolocation?navigator.geolocation.getCurrentPosition(p=>$("m").src=b+"&ll="+p.coords.latitude+","+p.coords.longitude,()=>$("m").src=b,{timeout:4000}):$("m").src=b}
 $("st").onclick=()=>{const t=prompt("Lipește blocul firebaseConfig din Firebase:");if(!t)return;const c={};t.replace(/["']?(\w+)["']?\s*:\s*["']([^"']*)["']/g,(m,k,v)=>{c[k]=v;return m});if(c.apiKey&&c.projectId){localStorage.fbcfg=JSON.stringify(c);location.reload()}else alert("Nu găsesc apiKey și projectId.")};
