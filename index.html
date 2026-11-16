@@ -80,6 +80,8 @@ body.so #sh{transform:none}
 <div class="r"><div><label>Data</label><input type="date" id="d"></div><div><label>kWh</label><input type="number" id="k" step="0.01" inputmode="decimal"></div></div>
 <div class="r"><div><label>Preț total (lei)</label><input type="number" id="p" step="0.01" inputmode="decimal"></div><div><label>Stația</label><select id="s"></select></div></div>
 <div class="mu" id="hint" style="margin:6px 4px 0"></div>
+<button class="sm" id="smb" style="width:100%;margin:10px 0 0;padding:11px">📍 Vezi stația pe hartă</button>
+<iframe id="sm" style="display:none;height:200px"></iframe><a id="sol" class="mu" target="_blank" style="display:block;margin-top:6px;color:var(--mu)"></a>
 <label>Kilometraj (opțional)</label><input type="number" id="o" inputmode="numeric" placeholder="ex: 24850">
 <button id="add">Salvează</button></div>
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -129,7 +131,9 @@ function rn(){
   h+=`<tr class="tt"><td colspan="2">Total lună</td><td class="ck" colspan="2">${f(k,1)} kWh</td><td class="cp" colspan="2">${f(p)} lei · ${f(p/k)}/kWh</td></tr></table></div></div></div>`});
  $("out").innerHTML=h||'<div class="card mu">Nicio încărcare încă. Apasă +.</div>';pp=null;cnt()}
 const tg=m=>{tap();const e=document.querySelector(`[data-m="${m}"]`);e.classList.toggle("open");e.classList.contains("open")?op.add(m):op.delete(m)};
-const cs=()=>document.body.classList.remove("so");
+const cs=()=>{document.body.classList.remove("so");$("sm").style.display="none";$("sm").removeAttribute("src");$("sol").textContent=""};
+function smap(){const n=S.stations[$("s").value];if(!n)return;const q=n.n;$("sm").style.display="block";$("sm").src="https://www.google.com/maps?output=embed&z=15&q="+encodeURIComponent(q);$("sol").href="https://www.google.com/maps/search/"+encodeURIComponent(q);$("sol").textContent="Deschide „"+q+"” în Google Maps ↗"}
+$("smb").onclick=()=>{tap();smap()};$("s").onchange=()=>{if($("sm").style.display=="block")smap()};
 function os(i){tap();const li=lst();if(typeof i=="number"){const c=S.charges[i];ei=i;let si=S.stations.findIndex(s=>s.n==c.s);if(si<0){S.stations.push({n:c.s,b:"Altă"});si=S.stations.length-1;rn()}
  $("d").value=c.d;$("k").value=c.k;$("p").value=c.p;$("o").value=c.o||"";$("s").value=si;pa=0;$("ft").textContent="Editează încărcarea";$("hint").textContent=""}
  else{ei=null;$("k").value=$("p").value=$("o").value="";$("d").valueAsDate=new Date();pa=1;if(li){const si=S.stations.findIndex(s=>s.n==li.s);if(si>=0)$("s").value=si}$("ft").textContent="Încărcare nouă";$("hint").textContent=li?`Prețul se calculează din ultimul tarif (${f(li.q)} lei/kWh)`:""}
